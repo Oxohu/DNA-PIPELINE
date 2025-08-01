@@ -15,10 +15,19 @@ def count_bases(sequence):
         if base in base_counts:
             base_counts[base] += 1
     return base_counts
+
 count_bases = count_bases(record.seq)
 print("🔹 Base Counts:", count_bases)
 
 def count_pairs(sequence):
-    #to count the occurences of each pair
-    pair_counts = {'AC': 0, 'GC' : 0, 'TA' : 0, 'GA' : 0 }
-    JK
+    # to count the occurrences of each pair
+    pair_counts = {'AC': 0, 'GC': 0, 'TA': 0, 'GA': 0}
+    for i in range(len(sequence) - 1):
+        pair = sequence[i] + sequence[i + 1]
+        if pair in pair_counts:
+            pair_counts[pair] += 1
+    return pair_counts
+
+count_result = count_pairs(str(record.seq))
+print("🔹 Pair counts:", count_result)
+    
